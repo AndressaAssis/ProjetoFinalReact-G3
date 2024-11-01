@@ -95,15 +95,14 @@ O projeto está organizado conforme os conceitos aprendidos, com componentes fun
 ---
 
 ## 👥 Contribuidores
-<div align="center">
+
    [![LinkedIn](https://img.shields.io/badge/AndressaJandre-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/andressa-jandre-289b472b9/) 
    [![LinkedIn](https://img.shields.io/badge/JoãoGabriel-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](http://www.linkedin.com/in/joao-gabriel-tavares-siqueira-5b1479332) 
    [![LinkedIn](https://img.shields.io/badge/LuizFernando-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/luiz-fernando-francedino-chagas-5592291b5/) 
-</div>
 
-<div align="center">
+
    [![LinkedIn](https://img.shields.io/badge/MiltonRodrigues-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/miltonrdmf/) 
    [![LinkedIn](https://img.shields.io/badge/TiagoVentura-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tiago-ventura-4a5571234/)
    [![LinkedIn](https://img.shields.io/badge/RomuloLourenço-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/romulo-louren%C3%A7o-201422219/)
-</div>
+
 
