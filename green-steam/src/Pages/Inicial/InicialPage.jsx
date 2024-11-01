@@ -13,7 +13,11 @@ export function InicialPage() {
         <>
         <Navbar />
 
+        <div>
+            <h1>Página Inicial</h1>
+            <p>Este é o conteúdo da sua página inicial.</p>
+        </div>
         <Footer />
         </>
-    )
+    );
 }
