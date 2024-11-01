@@ -11,11 +11,11 @@ export function Navbar() {
         <div className={styles.navList}>
           <ul>
             <li>Home</li>
-            <li>Jogos</li>
             <li>Comunidade</li>
             <li>Sobre os DEV's</li>
             <li>Suporte</li>
             <li>Criar Conta</li>
+            <li>Carrinho</li>
           </ul>
         </div>
       </header>

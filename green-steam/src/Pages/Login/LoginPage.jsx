@@ -8,8 +8,8 @@ export function Login() {
         <>
         <Navbar />
         <div>
-        <h1>Login</h1>
-        <p>Luismod, ligula non ultricitac hacilisi. Nulla facilisi.</p>
+           <h1>Login</h1>
+            <p>Luismod, ligula non ultricitac hacilisi. Nulla facilisi.</p>
         </div>
         <Footer />
         </>

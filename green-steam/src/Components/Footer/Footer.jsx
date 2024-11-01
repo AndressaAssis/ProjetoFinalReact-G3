@@ -10,7 +10,7 @@ export function Footer() {
           <p>Todos os direitos reservados &copy; Green Steam 2024</p>
         </div>
   
-        <div className="footer-policies">
+        <div className="footer-politicas">
           <h4>Políticas</h4>
           <ul>
             <li><a href="/politica-privacidade">Política de Privacidade</a></li>
@@ -19,12 +19,12 @@ export function Footer() {
           </ul>
         </div>
   
-        <div className="footer-socials">
+        <div className="footer-sociais">
           <h4>Redes Sociais</h4>
           <ul>
-            <li><a href="https://www.facebook.com/serraagricola" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-            <li><a href="https://www.instagram.com/serraagricola" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-            <li><a href="https://www.twitter.com/serraagricola" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer">Twitter</a></li>
           </ul>
         </div>
       </footer> 
