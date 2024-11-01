@@ -1,0 +1,69 @@
+.containerInicial {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    color: #f1f1f1;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.inicialWelcome h1 {
+    align-items: center;
+}
+
+.jogosLista {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+  
+.jogosItem {
+    width: 100%; 
+    max-width: 600px; 
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f0f0f0; 
+    text-align: left;
+    margin-top: 20px;
+}
+
+.jogosLista .jogosItem:nth-child(even) {
+    background-color: #c5c4c4; 
+}
+  
+.jogosItem img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+  
+.jogosItem h3 {
+    margin: 0 0 10px;
+}
+  
+.jogosItem p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.plataformas {
+    display: flex;
+    gap: 6px; 
+    margin-top: 10px; 
+}
+
+.iconePlataforma {
+    width: 10px; 
+    height: 10px;
+    cursor: pointer;
+    transition: transform 0.2s; 
+}
+
+.iconePlataforma:hover {
+    transform: scale(1.1); 
+}

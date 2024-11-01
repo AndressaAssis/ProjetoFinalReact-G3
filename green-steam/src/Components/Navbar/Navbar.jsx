@@ -1,5 +1,5 @@
 import styles from "./Navbar.module.css";
-import ps1_logo from "../../assets/logo.png";
+import ps1_logo from "../../assets/logo1.png";
 export function Navbar() {
     
   return (

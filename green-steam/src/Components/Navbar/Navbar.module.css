@@ -4,19 +4,18 @@
     height: 13vh;
     background-color: #000000;
     justify-content: space-between;
-
+    font-family: Arial, sans-serif;
 }
 
 .imagemContainer {
     width: 25%;
     padding: 0.5rem;
     padding-left: 2rem;
-
 }
 
 .imagemLogo {
-    width: 90px;
-    height: 80px;
+    width: 150px;
+    height: 86px;
 
 }
 
@@ -26,12 +25,19 @@
 }
 
 .navList ul {
+    list-style: none;
     display: flex;
-    gap: 1.8rem
+    gap: 1.8rem;
 }
 
 .navList li {
     list-style: none;
     font-size: 1.4rem;
-    color: azure;
+    color: #bbb;
+    transition: color 0.3s ease;
 }
+
+.navList li:hover {
+    color: rgb(103, 238, 70);
+}
+

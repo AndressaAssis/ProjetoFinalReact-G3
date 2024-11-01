@@ -1,0 +1,30 @@
+.containerDev {
+    padding: 20px;
+    text-align: center;
+}
+
+.listaDesenvolvedores {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px; 
+    background-color: #c5c4c4;
+}
+
+.desenvolvedor {
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px; 
+    box-shadow: 0 5px 10px rgba(101, 231, 83, 0.1);  
+    transition: color 0.3s ease;
+}
+
+.desenvolvedor h2:hover {
+    color: rgb(103, 238, 70);
+}
+
+.foto {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; 
+}
