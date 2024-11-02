@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Navbar } from "../../Components/Navbar/Navbar";
 import { Footer } from "../../Components/Footer/Footer";
 import styles from "./Inicial.module.css";
+import { useNavigate } from "react-router-dom";
 
 export function InicialPage() {
 
@@ -9,6 +10,21 @@ export function InicialPage() {
         console.log("Página inicial carregada")
         
     }, []);
+
+    const jogoExemplo = {
+        id: 1,
+        nome: 'Jogo Exemplo',
+        quantidade: 1,
+        preco: 100.0,
+        imagem: 'url_imagem_jogo_exemplo',
+    };
+
+    const navigate = useNavigate();
+
+    const adicionarAoCarrinho = (jogo) => {
+        console.log("Jogo adicionado ao carrinho:", jogo);
+        navigate("/carrinho");
+    };
 
     return(
         <>
@@ -33,6 +49,7 @@ export function InicialPage() {
                       <img src="https://static-00.iconduck.com/assets.00/epic-games-icon-512x512-7qpmojcd.png" alt="Epic Games" className={styles.iconePlataforma} />
                       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/2048px-Steam_icon_logo.svg.png" alt="Steam" className={styles.iconePlataforma} />
                     </div>
+                    <button onClick={() => adicionarAoCarrinho(jogoExemplo)}>Adicionar ao Carrinho</button>
                 </div>
 
                 <div className={styles.jogosItem}>

@@ -37,35 +37,23 @@
     transition: color 0.3s ease;
 }
 
-.navList li:hover {
-    color: rgb(103, 238, 70);
+.botao button {
+    background: none; 
+    border: none; 
+    color: #bbb; 
+    font-size: 1rem; 
+    padding: 8px 16px; 
+    transition: color 0.3s ease, transform 0.2s ease; 
+}
+  
+
+.botao button:hover {
+    color: rgb(103, 238, 70); 
+    transform: scale(1.05); 
 }
 
-.botao {
-    background-color: #28a745;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 50px;
-    font-size: 15px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    outline: none;
-}
-
-.botao:hover {
-    background-color: #0e4d1c;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.6);
-}
-
-.botao:active {
-    background-color: #043c19; /* Cor ao clicar */
-    transform: translateY(0);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+.botao button:active {
+    transform: scale(0.95); 
 }
 
 
