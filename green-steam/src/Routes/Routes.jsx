@@ -1,6 +1,5 @@
 import { NotFoundPage } from "../Pages/notFound/NotFound"
 import { Routes, Route } from 'react-router-dom'
-
 import { InicialPage } from '../Pages/Inicial/InicialPage';
 import { SobrePage } from "../Pages/Sobre/SobrePage";
 

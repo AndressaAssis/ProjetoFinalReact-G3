@@ -1,8 +1,12 @@
 import styles from "./Navbar.module.css";
 import ps1_logo from "../../assets/logo1.png";
-import { Link } from 'react-router-dom'
 export function Navbar() {
     
+
+  const navigate = useNavigate(); 
+
+  const handleNavigation=()=> navigate("/home");
+
   return (
     <>
       <header className={styles.header}>
@@ -11,7 +15,7 @@ export function Navbar() {
         </div>
         <div className={styles.navList}>
           <ul>
-            <li><Link to="/home">Home</Link></li>
+            <li>Home</li>
             <li>Comunidade</li>
             <li><Link to="/sobre">Sobre os DEV's</Link></li>
             <li>Suporte</li>
