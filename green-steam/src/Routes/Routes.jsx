@@ -16,7 +16,7 @@ export function Rotas() {
             <Route path="/carrinho" element={<Carrinho />} />
             <Route path="/suporte" element={<Suporte />} />
             <Route path="/sobreOsDevs" element={<SobreOsDevs />} />
-            <Route path="/*" element={<NotFoundPage />} /> {/* Fallback para rotas desconhecidas */}
+            <Route path="/*" element={<NotFoundPage />} /> 
         </Routes>
     );
 }
