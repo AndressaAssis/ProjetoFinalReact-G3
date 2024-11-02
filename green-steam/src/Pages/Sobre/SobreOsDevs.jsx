@@ -4,7 +4,7 @@ import { Navbar } from "../../Components/Navbar/Navbar";
 import { Footer } from "../../Components/Footer/Footer";
 import styles from "./Sobre.module.css";
 
-export function SobrePage() {
+export function SobreOsDevs() {
 
     return(
         <>

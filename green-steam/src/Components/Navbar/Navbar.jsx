@@ -1,11 +1,18 @@
 import styles from "./Navbar.module.css";
 import ps1_logo from "../../assets/logo1.png";
+import { useNavigate } from "react-router-dom";
+
 export function Navbar() {
     
 
   const navigate = useNavigate(); 
 
   const handleNavigation=()=> navigate("/home");
+  const handleNavigation1=()=> navigate("/login");
+  const handleNavigation2=()=> navigate("/criarConta");
+  const handleNavigation3=()=> navigate("/carrinho");
+  const handleNavigation4=()=> navigate("/suporte");
+  const handleNavigation5=()=> navigate("/sobreOsDevs");
 
   return (
     <>
@@ -14,16 +21,25 @@ export function Navbar() {
           <img className={styles.imagemLogo} src={ps1_logo} alt="imagem-logo" />
         </div>
         <div className={styles.navList}>
-          <ul>
-            <li>
+          <ul >
+            <li className={styles.botao}>
             <button onClick={handleNavigation}>Home</button>
             </li>
-            <li>Comunidade</li>
-            <li><Link to="/sobre">Sobre os DEV's</Link></li>
-            <li>Suporte</li>
-            <li><Link to="/cadastro">Criar Conta</Link></li>
-            <li><Link to="/login">Login</Link></li>
-            <li><Link to="/carrinho">Carrinho</Link></li>
+            <li className={styles.botao}>
+            <button onClick={handleNavigation1}>Login</button>
+            </li>
+            <li className={styles.botao}>
+            <button onClick={handleNavigation2}>Criar Conta</button>
+            </li>
+            <li className={styles.botao}>
+            <button onClick={handleNavigation3}>Carrinho</button>
+            </li>
+            <li className={styles.botao}>
+              <button onClick={handleNavigation4}>Suporte</button>
+            </li>
+            <li className={styles.botao}>
+              <button onClick={handleNavigation5}>Sobre os DEV's</button>
+            </li>
           </ul>
         </div>
       </header>
