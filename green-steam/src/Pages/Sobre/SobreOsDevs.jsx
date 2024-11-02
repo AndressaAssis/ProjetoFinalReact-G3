@@ -18,7 +18,8 @@ export function SobreOsDevs() {
                 <div className={styles.desenvolvedor}>
                     <img src="https://media.licdn.com/dms/image/v2/D4D03AQGD_tsu95q1ZQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1710159400215?e=1735776000&v=beta&t=CrZZp9yTob0DbLB3zxwezwaSsfhyKSIKjLEm0HRKC8o" alt="Desenvolvedor 1" className={styles.foto} />
                     <h2>Andressa Jandre</h2>
-                    <p><strong>Qualidades e Expertises:</strong>  Cria animações e transições que tornam a navegação pelos jogos mais envolvente.</p>
+                    <p><strong>Qualidades e Expertises:</strong>  
+                    Cria animações e transições que tornam a navegação pelos jogos mais envolvente.</p>
                 </div>
 
                 {/* Desenvolvedor 2 */}
