@@ -15,7 +15,9 @@ export function Navbar() {
         </div>
         <div className={styles.navList}>
           <ul>
-            <li>Home</li>
+            <li>
+            <button onClick={handleNavigation}>Home</button>
+            </li>
             <li>Comunidade</li>
             <li><Link to="/sobre">Sobre os DEV's</Link></li>
             <li>Suporte</li>
