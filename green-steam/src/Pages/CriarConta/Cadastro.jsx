@@ -1,16 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Navbar } from "../../Components/Navbar/Navbar";
 import { Footer } from "../../Components/Footer/Footer";
 import style from './Cadastro.module.css';
 
+function CustomAlert({ message, onClose }) {
+    return (
+        <div className={style.alertOverlay}>
+            <div className={style.alertBox}>
+                <p>{message}</p>
+                <button onClick={onClose}>Fechar</button>
+            </div>
+        </div>
+    );
+}
+
 export function Cadastro() {
+    const [showAlert, setShowAlert] = useState(false);
+    const navigate = useNavigate();
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        setShowAlert(true); 
+    };
+
+    const closeAlert = () => {
+        setShowAlert(false);
+        navigate("/home"); 
+    };
+
     return (
         <>
             <Navbar />
             <div className={style.Cadastro}>
                 <div className={style.formContainer}>
                     <h2>Cadastro de Usuário</h2>
-                    <form id="cadastroForm">
+                    <form id="cadastroForm" onSubmit={handleSubmit}>
                         <div className={style.inputGroup}>
                             <label htmlFor="nome">Nome</label>
                             <input type="text" id="nome" name="nome" required />
@@ -53,6 +78,8 @@ export function Cadastro() {
 
                         <button type="submit">Cadastrar</button>
                     </form>
+                    
+                    {showAlert && <CustomAlert message="Bem-vindo gamer, seu cadastro foi um sucesso!!!" onClose={closeAlert} />}
                 </div>
             </div>
             <Footer />
