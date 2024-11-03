@@ -1,4 +1,78 @@
-.containerLogin{
-    padding: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.containerLogin {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 16px;
+    padding: 10px;
+    border: 2px solid #00ffcc;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    box-shadow: 0 8px 16px rgba(0, 255, 204, 0.6);
+    font-family: 'Press Start 2P', cursive;
+    color: #00ffcc;
     text-align: center;
+}
+
+.h1Login {
+    color: #00ffcc;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px #000;
+}
+
+.labelLogin {
+    display: block;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    color: #00ffcc;
+    text-shadow: 1px 1px #000;
+}
+
+
+.inputLogin {
+    width: 95%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #00ffcc;
+    border-radius: 4px;
+    background-color: #333;
+    color: #00ffcc;
+    font-size: 1em;
+    outline: none;
+    text-shadow: 1px 1px #000;
+}
+
+.containerButtonLogin{
+    margin: auto;
+    margin-top: 16px;
+    padding: 8px;
+    border: 2px solid #00ffcc;
+    border-radius: 8px;
+}
+
+.LoginButtons {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    margin-bottom: 10;
+    background-color: #00ffcc;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    text-shadow: 1px 1px #000;
+    transform: translateY(0);
+}
+
+
+.pLogin{
+    padding: 5px;
+    color: #00ffcc;
+    font-size: 0.85em;
+    text-shadow: 1px 1px #000;
 }
