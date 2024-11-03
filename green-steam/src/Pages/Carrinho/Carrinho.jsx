@@ -1,36 +1,83 @@
-import React, { useState} from "react";
-import { Navbar } from "../../Components/Navbar/Navbar";
-import { Footer } from "../../Components/Footer/Footer";
-import styles from "./Carrinho.module.css";
+import React, { useContext } from "react";
+import { CarrinhoContext } from "../../Contexts/carrinhoContext";
+import styles from "../Carrinho/Carrinho.module.css"
+import { useNavigate } from "react-router-dom";
+import { Navbar } from "../../Components/Navbar/Navbar"; 
+import { Footer } from "../../Components/Footer/Footer"; 
 
-export function Carrinho({ onFinalizarCompra }) {
-    const [jogos] = useState([]);
+export function Carrinho() {
+    const {
+        itensCarrinho,
+        removerItem,
+        limparCarrinho,
+        incrementarQuantidade,
+        decrementarQuantidade,
+    } = useContext(CarrinhoContext);
+    const navigate = useNavigate();
 
+    const handleRemoverItem = (id) => {
+        removerItem(id);
+    };
 
-    return(
+    const handleLimparCarrinho = () => {
+        limparCarrinho();
+    };
+
+    const handleFinalizarCompra = () => {
+        navigate("/finalizar-compra");
+    };
+
+    const handleContinuarComprando = () => {
+        navigate("/home");
+    };
+
+    const calcularValorTotalComDesconto = () => {
+        return itensCarrinho.reduce((total, item) => {
+            const precoComDesconto = item.preco * (1 - item.desconto / 100);
+            return total + (precoComDesconto * item.quantidade);
+        }, 0);
+    };
+
+    const valorTotalComDesconto = calcularValorTotalComDesconto();
+
+    return (
         <>
-        <Navbar />
-
-        <div className={styles.carrinhoContainer}>
-            <h1 className={styles.titulo}>SEU CARRINHO</h1>
-
-            <div className={styles.listaJogos}>
-              {jogos.map((jogo) => (
-                <div key={jogo.id} className={styles.jogo}>
-                  <img src={jogo.imagem} alt={jogo.nome} className={styles.imagemJogo} />
-                    <div className={styles.detalhesJogo}>
-                       <h2>{jogo.nome}</h2>
-                       <p>Quantidade: {jogo.quantidade}</p>
-                       <p>Preço: R$ {jogo.preco}</p>
-                    </div>
-                </div>
-              ))} 
+            <Navbar /> 
+            <div className={styles.carrinhoContainer}>
+                <h1>Carrinho de Compras</h1>
+                {itensCarrinho.length === 0 ? (
+                    <p>Seu carrinho está vazio.</p>
+                ) : (
+                    <>
+                        <ul>
+                            {itensCarrinho.map((item) => {
+                                const precoComDesconto = item.preco * (1 - item.desconto / 100);
+                                return (
+                                    <li key={item.id}>
+                                        <img src={item.imagem} alt={item.nome} />
+                                        <h3>{item.nome}</h3>
+                                        <p>Quantidade: {item.quantidade}</p>
+                                        <p>Preço sem desconto: R$ {item.preco.toFixed(2)}</p>
+                                        <p>Desconto: {item.desconto}%</p>
+                                        <p>Preço com desconto: R$ {precoComDesconto.toFixed(2)}</p>
+                                        <p>Subtotal: R$ {(precoComDesconto * item.quantidade).toFixed(2)}</p>
+                                        <button onClick={() => decrementarQuantidade(item.id)} disabled={item.quantidade <= 1}>-</button>
+                                        <button onClick={() => incrementarQuantidade(item.id)}>+</button>
+                                        <button onClick={() => handleRemoverItem(item.id)}>Remover</button>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                        <p>Valor Total com Desconto: R$ {valorTotalComDesconto.toFixed(2)}</p>
+                        <button onClick={handleLimparCarrinho}>Limpar Carrinho</button>
+                        <button onClick={handleFinalizarCompra}>Finalizar Compra</button>
+                        <button onClick={handleContinuarComprando}>Continuar Comprando</button>
+                    </>
+                )}
             </div>
-            
-            <button className={styles.botaoFinalizar} onClick={onFinalizarCompra}>Finalizar Compra</button>
-        </div>
-        
-        <Footer />
+            <Footer /> 
         </>
     );
 }
+
+export default Carrinho;
