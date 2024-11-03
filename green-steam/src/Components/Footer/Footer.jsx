@@ -15,6 +15,7 @@ export function Footer() {
           <ul>
             <li><a href="/politica-privacidade">Política de Privacidade</a></li>
             <li><a href="/politica-reembolso">Política de Reembolso</a></li>
+            <li><a href="/comunidade">Comunidade</a> </li>
             <li><a href="/cartao-presente">Cartão Presente</a></li>
           </ul>
         </div>

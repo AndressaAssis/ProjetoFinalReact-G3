@@ -1,9 +1,8 @@
-import { useNavigation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export function NotFoundPage() {
-
-    const navigate = useNavigation();
-    const handleNavigation=()=> navigate("/Inicial");
+    const navigate = useNavigate();
+    const handleNavigation = () => navigate("/home");
 
     return (
         <>
@@ -13,5 +12,5 @@ export function NotFoundPage() {
 
             <button onClick={handleNavigation}>Voltar para a Página Inicial</button>
         </>
-    )
+    );
 }
