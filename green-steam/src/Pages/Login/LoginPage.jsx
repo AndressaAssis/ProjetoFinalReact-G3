@@ -20,18 +20,23 @@ export function Login() {
         }
         if (senha.trim() === "") {
             setMensagem("A senha não pode ser vazia.");
-            return;
+           return;
         }
-        setMensagem("Login realizado com sucesso!"); 
+        //mensagem que apareceria na tela de login se o botão nao levasse para pag home
+        /*setMensagem("Login realizado com sucesso!"); */
     };
 
-    // Função para redirecionar para a página de cadastro
+    // Função para redirecionar para a página de cadastro e home page
     const handleNavigation2 = () => {
         navigate("/criarConta"); 
     };
+    const handleNavigation = () =>{
+        navigate("/home");
+    }
+
 
     return (
-        <>
+        <div className={styles.divLoginPrincipal}>
             <Navbar /> 
             <div className={styles.containerLogin}>
                 <h1 className={styles.h1Login}>Login</h1> 
@@ -57,7 +62,7 @@ export function Login() {
                             required 
                         />
                     </div>
-                    <button className={styles.LoginButtons}type="submit">Entrar</button> 
+                    <button className={styles.LoginButtons} onClick={handleNavigation}>Entrar</button> 
                     <div className={styles.containerButtonLogin}>
                     <p className={styles.pLogin}>Ou Crie sua conta aqui</p>
                     <button className={styles.LoginButtons} onClick={handleNavigation2}>Cria Conta</button> 
@@ -65,7 +70,7 @@ export function Login() {
                 </form>
             </div>
             <Footer /> 
-        </>
+        </div>
     );
 }
 
