@@ -1,9 +1,7 @@
 import React, { useContext } from "react";
 import { CarrinhoContext } from "../../Contexts/carrinhoContext";
 import styles from "../Carrinho/Carrinho.module.css"
-import { useNavigate } from "react-router-dom";
-import { Navbar } from "../../Components/Navbar/Navbar"; 
-import { Footer } from "../../Components/Footer/Footer"; 
+import { useNavigate } from "react-router-dom"; 
 
 export function Carrinho() {
     const {
@@ -42,7 +40,6 @@ export function Carrinho() {
 
     return (
         <>
-            <Navbar /> 
             <div className={styles.carrinhoContainer}>
                 <h1>Carrinho de Compras</h1>
                 {itensCarrinho.length === 0 ? (
@@ -53,7 +50,7 @@ export function Carrinho() {
                             {itensCarrinho.map((item) => {
                                 const precoComDesconto = item.preco * (1 - item.desconto / 100);
                                 return (
-                                    <li key={item.id}>
+                                    <li className={styles.carrinho} key={item.id}>
                                         <img src={item.imagem} alt={item.nome} />
                                         <h3>{item.nome}</h3>
                                         <p>Quantidade: {item.quantidade}</p>
@@ -61,9 +58,11 @@ export function Carrinho() {
                                         <p>Desconto: {item.desconto}%</p>
                                         <p>Preço com desconto: R$ {precoComDesconto.toFixed(2)}</p>
                                         <p>Subtotal: R$ {(precoComDesconto * item.quantidade).toFixed(2)}</p>
-                                        <button onClick={() => decrementarQuantidade(item.id)} disabled={item.quantidade <= 1}>-</button>
+                                      <div className={styles.buttonCarrinho}>
+                                        <button  onClick={() => decrementarQuantidade(item.id)} disabled={item.quantidade <= 1}>-</button>
                                         <button onClick={() => incrementarQuantidade(item.id)}>+</button>
                                         <button onClick={() => handleRemoverItem(item.id)}>Remover</button>
+                                      </div>
                                     </li>
                                 );
                             })}
@@ -74,8 +73,7 @@ export function Carrinho() {
                         <button onClick={handleContinuarComprando}>Continuar Comprando</button>
                     </>
                 )}
-            </div>
-            <Footer /> 
+            </div> 
         </>
     );
 }

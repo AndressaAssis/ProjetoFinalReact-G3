@@ -9,58 +9,53 @@
   font-family: 'Arial', sans-serif;
 }
 
-h1 {
+.carrinhoContainer h1 {
   font-size: 1.75rem;
   margin-bottom: 21px;
-  color: #2c3e50;
+  color: rgb(103, 238, 70);
   text-align: center;
   border-bottom: 1.4px solid #2c3e50;
   padding-bottom: 7px;
 }
 
-ul {
+.carrinhoContainer ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-li {
+.carrinho li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid #ddd;
+  border: 1px solid #333;
   padding: 10.5px;
   border-radius: 5.6px;
-  background-color: #f4f6f7;
   margin-bottom: 14px;
   transition: background-color 0.3s;
 }
 
-li:hover {
-  background-color: #ecf0f1;
-}
-
-img {
+.carrinhoContainer img {
   width: 84px;
   height: auto;
   border-radius: 3.5px;
   margin-right: 14px;
 }
 
-h3 {
+.carrinhoContainer h3 {
   font-size: 1.05rem;
   color: #2980b9;
   margin: 0;
 }
 
-p {
+.carrinhoContainer p {
   margin: 3.5px 0;
   color: #7f8c8d;
   font-size: 0.7rem;
 }
 
-button {
-  background-color: #2980b9;
+.buttonCarrinho {
+  background-color: rgb(103, 238, 70);
   color: white;
   border: none;
   padding: 7px 14px;
@@ -71,15 +66,15 @@ button {
   transition: background-color 0.3s, transform 0.2s;
 }
 
-button:hover {
-  background-color: #217dbb;
+buttonCarrinho:hover {
+  background-color: rgb(103, 238, 70);
 }
 
-button:active {
+buttonCarrinho:active {
   transform: scale(0.95);
 }
 
-button:disabled {
+buttonCarrinho:disabled {
   background-color: #bdc3c7;
   cursor: not-allowed;
 }
@@ -95,7 +90,7 @@ button:disabled {
 
 .totalText {
   font-weight: bold;
-  color: #2c3e50;
+  color: rgb(103, 238, 70);
   margin: 7px 0;
 }
 

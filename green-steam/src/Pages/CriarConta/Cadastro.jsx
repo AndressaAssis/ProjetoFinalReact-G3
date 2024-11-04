@@ -31,7 +31,6 @@ export function Cadastro() {
 
     return (
         <>
-            <Navbar />
             <div className={style.Cadastro}>
                 <div className={style.formContainer}>
                     <h2>Cadastro de Usuário</h2>
@@ -82,7 +81,6 @@ export function Cadastro() {
                     {showAlert && <CustomAlert message="Bem-vindo gamer, seu cadastro foi um sucesso!!!" onClose={closeAlert} />}
                 </div>
             </div>
-            <Footer />
         </>
     );
 }

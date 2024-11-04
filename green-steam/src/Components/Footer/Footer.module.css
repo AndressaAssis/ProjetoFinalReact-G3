@@ -21,7 +21,7 @@
 }
   
 .footer ul {
-    list-style: none;
+    list-style: none; 
     padding: 0;
 }
 
@@ -29,6 +29,10 @@
     color: #bbb;
     text-decoration: none;
     font-size: 14px;
+    transition: color 0.3s ease;
+    background: none;  
+    border: none;          
+    padding: 0;              
 }
   
 .footer a:hover {

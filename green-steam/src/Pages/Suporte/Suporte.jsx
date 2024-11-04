@@ -7,7 +7,6 @@ export function Suporte(){
     return(
     <>
       <>
-        <Navbar />
 
         <div>
         <h1>Suporte</h1>
@@ -23,7 +22,6 @@ export function Suporte(){
         <h2>informaçoes com todos os produtos e buttons</h2>
         </div>
         
-        <Footer />
         </>   
     </>
     )

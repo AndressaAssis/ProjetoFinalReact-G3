@@ -1,6 +1,14 @@
 .containerDev {
     padding: 20px;
     text-align: center;
+    color: rgb(103, 238, 70);
+    margin-top: 20px;
+}
+
+.containerDev h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: rgb(103, 238, 70);
 }
 
 .listaDesenvolvedores {
@@ -8,14 +16,14 @@
     flex-wrap: wrap; 
     justify-content: center; 
     gap: 20px; 
-    background-color: #c5c4c4;
 }
 
 .desenvolvedor {
     padding: 20px;
     border-radius: 8px;
     width: 250px; 
-    box-shadow: 0 5px 10px rgba(101, 231, 83, 0.1);  
+    background-color: #333;
+    box-shadow: 0 5px 10px rgb(103, 238, 70);  
     transition: color 0.3s ease;
 }
 

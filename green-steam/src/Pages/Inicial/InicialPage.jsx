@@ -23,13 +23,13 @@ export function InicialPage() {
         },
         {
             id: 2,
-            nome: 'League of Legends',
+            nome: 'F1-24',
             quantidade: 1,
-            preco: 100.00,
-            desconto: 10,
-            genero: 'MOBA',
-            imagem: 'https://www.adrenaline.com.br/wp-content/uploads/2023/06/league-of-legends-capa.jpg',
-            descricao: 'League of Legends é um jogo de estratégia onde duas equipes de cinco poderosos Campeões se enfrentam para destruir a base uma da outra.'
+            preco: 79.00,
+            desconto: 5,
+            genero: 'Esporte',
+            imagem: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2488620/header.jpg?t=1728991222',
+            descricao: 'Alcance as primeiras colocações e pilote como as feras do automobilismo no EA SPORTS™ F1® 24, o jogo oficial do 2024 FIA Formula One World Championship.'
         },
         {
             id: 3,
@@ -38,7 +38,7 @@ export function InicialPage() {
             preco: 100.00,
             desconto: 10,
             genero: 'Aventura',
-            imagem: 'https://image.api.playstation.com/vulcan/ap/rnd/202206/0720/eEczyEMDd2BLa3dtkGJVE9Id.png',
+            imagem: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1888930/header.jpg?t=1728603021',
             descricao: 'Em uma civilização devastada, Joel é contratado para contrabandear Ellie, de 14 anos, para fora de uma zona de quarentena militar.'
         },
         {
@@ -110,7 +110,108 @@ export function InicialPage() {
             genero: 'Estratégia',
             imagem: 'https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000013704/918c0badde3aeba760e2185f382a2402248a1292322cf540fd8d098eeb292e1e',
             descricao: 'Expanda seu império e enfrente os maiores líderes da história em Civilization VI.'
+        },
+        {
+            id: 11,
+            nome: "God Of War Ragnarok",
+            quantidade: 1,
+            preco: 249.90,
+            desconto: 10,
+            genero: 'Aventura',
+            imagem: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2322010/header.jpg?t=1728067832',
+            descricao: 'Kratos e Atreus embarcam numa viagem mítica em busca de respostas antes da chegada do Ragnarök.'
+        },
+        {
+            id: 12,
+            nome: "Resident Evil 4",
+            quantidade: 1,
+            preco: 129.90,
+            desconto: 10,
+            genero: 'Terror',
+            imagem: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2050650/header.jpg?t=1730246738',
+            descricao: 'Sobrevivência é apenas o começo. Seis anos se passaram desde o desastre biológico em Raccoon City. Leon S. Kennedy, um dos sobreviventes, segue o rastro da raptada filha do presidente até uma vila europeia isolada, onde há algo terrivelmente errado com os habitantes.'
+        },
+        {
+            id: 13,
+            nome: "Total War: PHARAOH",
+            quantidade: 1,
+            preco: 49.90,
+            desconto: 5,
+            genero: 'Estratégia',
+            imagem: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1937780/header.jpg?t=1730284459',
+            descricao: 'Em Total War: PHARAOH, a mais nova adição à premiada série de grande estratégia, mergulhe no antigo Egito durante o auge do poder e vivencie os eventos dramáticos que ameaçam a destruição dessa civilização.'
+        },
+        {
+            id: 14,
+            nome: "Euro Truck Simulator 2",
+            quantidade: 1,
+            preco: 69.90,
+            desconto: 5,
+            genero: 'Estratégia',
+            imagem: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/227300/header.jpg?t=1730373569',
+            descricao: 'Viaje pela Europa como o rei da estrada, um caminhoneiro que entrega cargas importantes por distâncias impressionantes! Com dezenas de cidades para explorar, sua resistência, habilidade e velocidade serão levadas ao limite.'
+        },
+        {
+            id: 15,
+            nome: "Black Myth: Wukong",
+            quantidade: 1,
+            preco: 199.90,
+            desconto: 5,
+            genero: 'RPG',
+            imagem: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2358720/header.jpg?t=1729236256',
+            descricao: 'Black Myth: Wukong é um RPG de ação inspirado na mitologia chinesa. Você assume o papel do Predestinado e tem a responsabilidade de encarar os desafios e as maravilhas do mundo para desvendar a verdade obscura por trás de uma lenda gloriosa do passado.'
+        },
+        {
+            id: 16,
+            nome: "Monster Hunter: World",
+            quantidade: 1,
+            preco: 89.90,
+            desconto: 5,
+            genero: 'RPG',
+            imagem: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/582010/header.jpg?t=1730268377',
+            descricao: 'Conheça o Novo Mundo! Em Monster Hunter: World, o jogo mais recente da série, você pode curtir a experiência máxima de caçada, usando tudo à sua disposição para caçar monstros em um novo mundo repleto de surpresas e emoções.'
+        },
+        {
+            id: 17,
+            nome: "Forza Horizon 5",
+            quantidade: 1,
+            preco: 79.90,
+            desconto: 5,
+            genero: 'Esporte',
+            imagem: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1551360/header.jpg?t=1727883919',
+            descricao: 'Explore as paisagens vibrantes de mundo aberto do México com diversão e velocidade sem limites com os melhores carros do mundo. Participe de um jogo de perseguição emocionante com a nossa nova Experiência Multijogador 5 contra 1, Esconde-Esconde!'
+        },
+        {
+            id: 18,
+            nome: "NBA 2K25",
+            quantidade: 1,
+            preco: 219.90,
+            desconto: 5,
+            genero: 'Esporte',
+            imagem: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2878980/header.jpg?t=1730136287',
+            descricao: 'Domine as quadras com autenticidade e realismo impulsionados por ProPLAY™, que dá a você o controle total do seu jogo no NBA 2K25. Defina seu legado no MyCAREER, MyTEAM, MyNBA e The W.'
+        },
+        {
+            id: 19,
+            nome: "Call of Duty®: Black Ops 6",
+            quantidade: 1,
+            preco: 249.90,
+            desconto: 5,
+            genero: 'Esporte',
+            imagem: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2933620/header.jpg?t=1730505579',
+            descricao: 'Call of Duty®: Black Ops 6 é a assinatura Black Ops em uma Campanha cinematográfica para um jogador, a melhor experiência Multijogador da categoria e o retorno épico do modo Zumbis por Rodada.'
+        },
+        {
+            id: 20,
+            nome: "Spirit of the North",
+            quantidade: 1,
+            preco: 39.90,
+            desconto: 5,
+            genero: 'Aventura',
+            imagem: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1213700/header.jpg?t=1701265706',
+            descricao: 'Spirit of the North: Enhanced Edition é um jogo de aventura na 3.ª pessoa, para um jogador, inspirado nas deslumbrantes e misteriosas paisagens da Islândia. A sua história baseia-se em diversos elementos do folclore nórdico.'
         }
+        
     ];
 
     const navigate = useNavigate();
@@ -124,7 +225,6 @@ export function InicialPage() {
 
     return (
         <>
-            <Navbar />
             <div className={styles.containerInicial}>
                 <div>
                     <h1 className={styles.inicialWelcome}>Bem-vindo ao Green Steam!</h1>
@@ -161,7 +261,6 @@ export function InicialPage() {
                 ))}
             </div>
 
-            <Footer />
         </>
     );
 }

@@ -36,8 +36,7 @@ export function Login() {
 
 
     return (
-        <div className={styles.divLoginPrincipal}>
-            <Navbar /> 
+        <div className={styles.divLoginPrincipal}> 
             <div className={styles.containerLogin}>
                 <h1 className={styles.h1Login}>Login</h1> 
                 {mensagem && <p className={styles.pLogin}>{mensagem}</p>} 
@@ -69,7 +68,6 @@ export function Login() {
                     </div>
                 </form>
             </div>
-            <Footer /> 
         </div>
     );
 }

@@ -8,7 +8,6 @@ export function SobreOsDevs() {
 
     return(
         <>
-        <Navbar />
 
         <div className={styles.containerDev}>
             <h1>Desenvolvedores do Projeto</h1>
@@ -62,7 +61,6 @@ export function SobreOsDevs() {
             </div>
         </div>
         
-        <Footer />
         </>
     )
 }

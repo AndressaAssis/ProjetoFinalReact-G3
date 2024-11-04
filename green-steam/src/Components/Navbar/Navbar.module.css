@@ -16,7 +16,6 @@
 .imagemLogo {
     width: 150px;
     height: 86px;
-
 }
 
 .navList {
@@ -25,7 +24,7 @@
 }
 
 .navList ul {
-    list-style: none;
+    list-style-type: none;
     display: flex;
     gap: 1.8rem;
 }
@@ -42,7 +41,8 @@
     border: none; 
     color: #bbb; 
     font-size: 1rem; 
-    padding: 8px 16px; 
+    padding: 20px 16px; 
+    cursor: pointer;
     transition: color 0.3s ease, transform 0.2s ease; 
 }
   
