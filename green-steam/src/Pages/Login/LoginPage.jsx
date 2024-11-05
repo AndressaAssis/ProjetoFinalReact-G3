@@ -1,6 +1,4 @@
-import React, { useState } from "react"; 
-import { Navbar } from "../../Components/Navbar/Navbar"; 
-import { Footer } from "../../Components/Footer/Footer"; 
+import React, { useState } from "react";  
 import styles from "../Login/LoginPage.module.css"
 import { useNavigate } from "react-router-dom";
 export function Login() {
@@ -16,7 +14,7 @@ export function Login() {
         e.preventDefault(); 
         if (!email.includes("@")) {
             setMensagem("Por favor, insira um e-mail válido contendo '@'.");
-            return;
+          return;  
         }
         if (senha.trim() === "") {
             setMensagem("A senha não pode ser vazia.");
@@ -30,6 +28,7 @@ export function Login() {
     const handleNavigation2 = () => {
         navigate("/criarConta"); 
     };
+
     const handleNavigation = () =>{
         navigate("/home");
     }
@@ -71,21 +70,3 @@ export function Login() {
         </div>
     );
 }
-
-/*
-import React from "react";
-import { Navbar } from "../../Components/Navbar/Navbar";
-import { Footer } from "../../Components/Footer/Footer";
-
-export function Login() {
-
-    return(
-        <>
-        <Navbar />
-        <div>
-        
-        </div>
-        <Footer />
-        </>
-    )
-}*/

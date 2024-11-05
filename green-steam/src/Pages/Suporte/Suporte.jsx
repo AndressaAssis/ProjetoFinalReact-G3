@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { Navbar } from "../../Components/Navbar/Navbar";
-import { Footer } from "../../Components/Footer/Footer";
 import styles from './Suporte.module.css'; 
 
 export function Suporte() {
@@ -37,15 +35,10 @@ export function Suporte() {
             <div className={styles.suporteContainer}>
                 <h1>Suporte</h1>
                 <h2>Queremos garantir que sua experiência de compra seja rápida, segura e fácil.
-                    <br />Caso precise de assistência, nossa equipe está pronta para ajudar em todas as etapas.</h2>
+                Nossa equipe está pronta para ajudar em todas as etapas. Se você tiver dúvidas, 
+                sugestões ou reclamações, envie-nos uma mensagem!</h2>
 
-                <h2>Dúvidas sobre pedidos: Acompanhe o status do seu pedido, altere informações de entrega e saiba mais sobre nossa política de envio.</h2>
-
-                <h2>Pagamentos e reembolsos: Encontre respostas sobre formas de pagamento, segurança, e os procedimentos para reembolsos.</h2>
-
-                <h2>Problemas com produtos: Recebeu um produto com defeito ou diferente do esperado? Confira nossas instruções para troca e devolução.</h2>
                 
-                <h2>Envie sua Reclamação</h2>
                 <div className={styles.reclamacaoContainer}>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="email">Email:</label>
@@ -59,18 +52,18 @@ export function Suporte() {
                             className={styles.inputLogin} 
                         />
 
-                        <label htmlFor="mensagem">Sua Reclamação:</label>
+                        <label htmlFor="mensagem">Sua Mensagem:</label>
                         <textarea 
                             id="mensagem" 
                             value={mensagem}
                             onChange={(e) => setMensagem(e.target.value)}
                             required 
-                            placeholder="Digite sua reclamação" 
+                            placeholder="Digite sua dúvida, sugestão ou reclamação" 
                             rows="4" 
                             className={styles.inputLogin}
                         ></textarea>
 
-                        <button type="submit" className={styles.LoginButtons}>Enviar Reclamação</button>
+                        <button type="submit" className={styles.LoginButtons}>Enviar</button>
                     </form>
                     {showAlert && <CustomAlert message="Obrigado pelo feedback, responderemos em breve." onClose={closeAlert} />}
                 

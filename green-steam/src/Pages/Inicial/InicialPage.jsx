@@ -1,6 +1,4 @@
 import { useEffect, useContext, useState } from "react";
-import { Navbar } from "../../Components/Navbar/Navbar";
-import { Footer } from "../../Components/Footer/Footer";
 import styles from "./Inicial.module.css";
 import { useNavigate } from "react-router-dom";
 import { CarrinhoContext } from "../../Contexts/carrinhoContext";
