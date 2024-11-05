@@ -1,35 +1,37 @@
 .Cadastro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150vh;
+  text-align: center;
 }
 
 .formContainer {
-    background-color: #333;
-    padding: 5rem;
-    border-radius: 5rem;
-    box-shadow: 0 0px px rgba(0, 0, 0, 0.3);
-    width: 400px;
-    color: white;
+  background-color: #333;
+  padding: 5rem;
+  border-radius: 5rem;
+  box-shadow: 0 0px px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  color: white;
 }
 
 .formContainer h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: rgb(103, 238, 70);
-    font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(103, 238, 70);
+  font-size: 24px;
 }
 
 .inputGroup {
-    margin-bottom: 1rem;
-    
+  margin-bottom: 1rem;
+  margin-right: 7%;
+  margin-left: none;
 }
 
 .inputGroup label {
-    display: block;
-    margin-bottom: 4px;
-    font-weight: bold;
+  display: block;
+  margin-bottom: 4px;
+  font-weight: bold;
 }
 
 .inputGroup input[type="text"],
@@ -37,76 +39,80 @@
 .inputGroup input[type="password"],
 .inputGroup input[type="tel"],
 .inputGroup input[type="number"] {
-    width: 100%;
-    padding: 12px;
-    margin-top: 5px;
-    border: 2px solid rgb(103, 238, 70);
-    border-radius: 8px;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: 2px solid rgb(103, 238, 70);
+  border-radius: 8px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  background-color: #333;
+  color: #4caf50;
 }
 
 input:focus {
-    border-color: #81c784;
-    outline: none;
+  border-color: #81c784;
+  outline: none;
 }
 
 button {
-    width: 100%;
-    padding: 15px;
-    margin-top: 15px;
-    align-items: center;
-    background-color: rgb(103, 238, 70);
-    color: #333;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+  margin-top: 15px;
+  background-color: rgb(103, 238, 70);
+  color: #333;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
 
+  display: block;
+  margin: 15px auto;
+}
 
 .alertOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-
 .alertBox {
-    background-color: rgb(103, 238, 70);
-    padding: 20px;
-    border-radius: 30px;
-    width: 300px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    color: #333;
+  background-color: rgb(103, 238, 70);
+  padding: 20px;
+  border-radius: 30px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #333;
 }
 
 .alertBox p {
-    margin: 0 0 15px;
-    color: rgb(14, 13, 13);
-    font-size: 2rem;
+  margin: 0 0 15px;
+  color: rgb(14, 13, 13);
+  font-size: 2rem;
 }
 
 .alertBox button {
-    padding: 8px 12px;
-    border: none;
-    background-color: rgb(103, 238, 70);
-    color: black;
-    cursor: pointer;
-    border-radius: 4px;
+  padding: 8px 12px;
+  border: none;
+  background-color: rgb(103, 238, 70);
+  color: black;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
 .alertBox button:hover {
-    background-color: #489e0f;
-    color: #0c0c0c;
+  background-color: #489e0f;
+  color: #0c0c0c;
 }

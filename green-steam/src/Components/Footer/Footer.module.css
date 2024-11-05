@@ -1,45 +1,55 @@
 .footer {
-    display: flex;
-    justify-content: space-around;
-    background-color: #333;
-    color: #f1f1f1;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    margin-top: 20px;
-}
+  display: flex;
+  justify-content: space-around;
+  background-color: #333;
+  color: #f1f1f1;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  margin-top: 20px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
   
+  
+}
+
 .footer-info,
 .footer-politicas,
 .footer-sociais {
-    max-width: 200px;
+  max-width: 200px;
 }
 
 .footer h4 {
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: #f9f9f9;
-}
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #f9f9f9;
   
+}
+
 .footer ul {
-    list-style: none; 
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .footer a {
-    color: #bbb;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
-    background: none;  
-    border: none;          
-    padding: 0;              
+  color: #bbb;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  padding: 0;
 }
-  
+
 .footer a:hover {
-    color: rgb(103, 238, 70);
+  color: rgb(103, 238, 70);
 }
- 
+
 .footer p {
-   margin: 5px 0;
-   font-size: 14px;
+  margin: 5px 0;
+  font-size: 14px;
 }
