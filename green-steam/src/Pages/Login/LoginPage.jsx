@@ -25,6 +25,7 @@ export function Login() {
 
         // Se as validações passarem, redireciona para a página inicial
         navigate("/home");
+       
     };
 
     // Função para redirecionar para a página de cadastro
@@ -44,6 +45,7 @@ export function Login() {
                             type="email" 
                             id="email" 
                             value={email} 
+                            placeholder="Digite seu email"
                             onChange={(e) => setEmail(e.target.value)} 
                             required 
                         />
@@ -54,6 +56,7 @@ export function Login() {
                             type="password" 
                             id="senha" 
                             value={senha} 
+                            placeholder="Digite a sua senha"
                             onChange={(e) => setSenha(e.target.value)} 
                             required 
                         />

@@ -3,8 +3,6 @@ import styles from "./Inicial.module.css";
 import { useNavigate } from "react-router-dom";
 import { CarrinhoContext } from "../../Contexts/carrinhoContext.jsx";
 import api from "../../Services/Api.js";
-import { Navbar } from '../../Components/Navbar/Navbar';
-import { Footer } from '../../Components/Footer/Footer';
 
 export function InicialPage() {
   const [jogos, setJogos] = useState([]);

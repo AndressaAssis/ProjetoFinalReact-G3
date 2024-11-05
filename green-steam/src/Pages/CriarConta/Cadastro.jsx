@@ -35,22 +35,22 @@ export function Cadastro() {
                     <form id="cadastroForm" onSubmit={handleSubmit}>
                         <div className={style.inputGroup}>
                             <label htmlFor="nome">Nome</label>
-                            <input type="text" id="nome" name="nome" required />
+                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome aqui" required />
                         </div>
 
                         <div className={style.inputGroup}>
                             <label htmlFor="email">Email</label>
-                            <input type="email" id="email" name="email" required />
+                            <input type="email" id="email" name="email" placeholder="Digite seu email aqui" required />
                         </div>
 
                         <div className={style.inputGroup}>
                             <label htmlFor="cpf">CPF</label>
-                            <input type="text" id="cpf" name="cpf" required />
+                            <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF aqui" required />
                         </div>
 
                         <div className={style.inputGroup}>
                             <label htmlFor="telefone">Telefone</label>
-                            <input type="tel" id="telefone" name="telefone" required />
+                            <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone aqui" required />
                         </div>
 
                         <div className={style.inputGroup}>
@@ -60,17 +60,17 @@ export function Cadastro() {
 
                         <div className={style.inputGroup}>
                             <label htmlFor="numero">Número</label>
-                            <input type="number" id="numero" name="numero" required />
+                            <input type="number" id="numero" name="numero" placeholder="Digite o número da casa aqui" required />
                         </div>
 
                         <div className={style.inputGroup}>
                             <label htmlFor="senha">Senha</label>
-                            <input type="password" id="senha" name="senha" required />
+                            <input type="password" id="senha" name="senha" placeholder="Crie uma senha" required />
                         </div>
 
                         <div className={style.inputGroup}>
                             <label htmlFor="confirmacaoSenha">Confirmação de Senha</label>
-                            <input type="password" id="confirmacaoSenha" name="confirmacaoSenha" required />
+                            <input type="password" id="confirmacaoSenha" name="confirmacaoSenha" placeholder="Confirme sua senha" required />
                         </div>
 
                         <button type="submit">Cadastrar</button>
