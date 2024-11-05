@@ -1,38 +1,36 @@
 import React, { useState } from "react";  
-import styles from "../Login/LoginPage.module.css"
+import styles from "../Login/LoginPage.module.css";
 import { useNavigate } from "react-router-dom";
-export function Login() {
 
-    // useNavigate é chamado no corpo do componente
-    const navigate=useNavigate();
+export function Login() {
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState(""); 
     const [senha, setSenha] = useState(""); 
     const [mensagem, setMensagem] = useState(""); 
 
     const handleSubmit = (e) => {
-        e.preventDefault(); 
+        e.preventDefault(); // Impede o comportamento padrão de envio do formulário
+        setMensagem(""); // Limpa a mensagem antes de validar
+
+        // Validações
         if (!email.includes("@")) {
             setMensagem("Por favor, insira um e-mail válido contendo '@'.");
-          return;  
+            return;  
         }
         if (senha.trim() === "") {
             setMensagem("A senha não pode ser vazia.");
-           return;
+            return;
         }
-        //mensagem que apareceria na tela de login se o botão nao levasse para pag home
-        /*setMensagem("Login realizado com sucesso!"); */
+
+        // Se as validações passarem, redireciona para a página inicial
+        navigate("/home");
     };
 
-    // Função para redirecionar para a página de cadastro e home page
+    // Função para redirecionar para a página de cadastro
     const handleNavigation2 = () => {
         navigate("/criarConta"); 
     };
-
-    const handleNavigation = () =>{
-        navigate("/home");
-    }
-
 
     return (
         <div className={styles.divLoginPrincipal}> 
@@ -60,10 +58,10 @@ export function Login() {
                             required 
                         />
                     </div>
-                    <button className={styles.LoginButtons} onClick={handleNavigation}>Entrar</button> 
+                    <button className={styles.LoginButtons} type="submit">Entrar</button> 
                     <div className={styles.containerButtonLogin}>
-                    <p className={styles.pLogin}>Ou Crie sua conta aqui</p>
-                    <button className={styles.LoginButtons} onClick={handleNavigation2}>Cria Conta</button> 
+                        <p className={styles.pLogin}>Ou Crie sua conta aqui</p>
+                        <button type="button" className={styles.LoginButtons} onClick={handleNavigation2}>Cria Conta</button> 
                     </div>
                 </form>
             </div>
