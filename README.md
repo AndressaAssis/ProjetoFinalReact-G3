@@ -9,7 +9,7 @@ Acesse a aplicação: [Missão Secreta](https://missao-secreta-20242.vercel.app/
 
 ---
 
-![Logo da Loja](./assets/logo1.png)
+![Logo da Loja](./src//assets/logo1.png)
 
 
 ## 📑 Tabela de Conteúdos
