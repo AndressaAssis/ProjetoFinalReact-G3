@@ -8,12 +8,13 @@
     text-align: center;
     margin-bottom: 20px;
     font-size: 24px;
-    color: #333;
+    color: #4caF50;
 }
 
 .table {
     width: 100%;
     border-collapse: collapse;
+    margin-bottom: 45%;
 }
 
 .table th, .table td {

@@ -1,16 +1,23 @@
 .suporteContainer {
-  
-  width: 40%;
-  margin: 20px auto;
-  padding-bottom: 10%;
-  padding-left: 2%;
-  padding-right: 2%;
-  padding-top: 2%;
-  border: 2px solid rgb(103, 238, 70);
-  border-radius: 10px;
-  background-color: rgb(31, 42, 31);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  color: white;
+  max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid rgb(103, 238, 70);
+    border-radius: 10px;
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.suporteContainer h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.suporteContainer h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color:  #357c38;
 }
 
 .reclamacaoContainer {
@@ -19,7 +26,6 @@
   border: 1px solid rgb(103, 238, 70);
   border-radius: 10px;
   background-color: rgb(50, 60, 50);
-  
 }
 
 input[type="email"],

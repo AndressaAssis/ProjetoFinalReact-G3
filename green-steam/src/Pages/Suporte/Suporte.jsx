@@ -31,15 +31,12 @@ export function Suporte() {
 
     return (
         <>
-            
-            <div className={styles.suporteContainer}>
+          <div className={styles.suporteContainer}>
                 <h1>Suporte</h1>
                 <h2>Queremos garantir que sua experiência de compra seja rápida, segura e fácil.
                 Nossa equipe está pronta para ajudar em todas as etapas. Se você tiver dúvidas, 
                 sugestões ou reclamações, envie-nos uma mensagem!</h2>
 
-                
-                <div className={styles.reclamacaoContainer}>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="email">Email:</label>
                         <input 
@@ -49,7 +46,7 @@ export function Suporte() {
                             onChange={(e) => setEmail(e.target.value)}
                             required 
                             placeholder="Seu email" 
-                            className={styles.inputLogin} 
+                            className={styles.inputReclamacao} 
                         />
 
                         <label htmlFor="mensagem">Sua Mensagem:</label>
@@ -60,15 +57,14 @@ export function Suporte() {
                             required 
                             placeholder="Digite sua dúvida, sugestão ou reclamação" 
                             rows="4" 
-                            className={styles.inputLogin}
+                            className={styles.inputReclamacao}
                         ></textarea>
 
                         <button type="submit" className={styles.LoginButtons}>Enviar</button>
                     </form>
                     {showAlert && <CustomAlert message="Obrigado pelo feedback, responderemos em breve." onClose={closeAlert} />}
-                
-                
-                </div>
+
+
             </div>
            
         </>

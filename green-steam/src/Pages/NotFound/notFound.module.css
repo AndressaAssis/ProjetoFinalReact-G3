@@ -1,32 +1,54 @@
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
-
-.txt {
-  margin-top: 2%;
-  text-align: center;
-  font-size: 150%;
-}
-
-.botao {
+.notFoundContainer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 9%;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
 }
 
-button {
-  border: none;
-  background: none;
-  cursor: pointer;
+.textContainer {
+  margin-bottom: 30px;
 }
 
-.imgBotao {
-  width: 15%; 
+.title {
+  font-size: 2.5rem;
+  color: #28da52;
+}
+
+.errorCode {
+  font-size: 2rem;
+  color: #dd6229;
+  margin: 10px 0;
+}
+
+.message {
+  font-size: 1.2rem;
+  color: #28da52;
+  margin-bottom: 30px;
+}
+
+.image {
+  max-width: 300px;
+  width: 100%;
   height: auto;
-  transition: opacity 0.3s ease;
-  border-radius: 50%;
-
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-button:hover .imgBotao {
-  opacity: 0.8; 
+.backButton {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.backButton:hover {
+  background-color: #218838;
 }
