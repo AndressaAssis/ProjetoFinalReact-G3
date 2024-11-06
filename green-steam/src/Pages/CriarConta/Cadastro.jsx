@@ -103,7 +103,7 @@ export function Cadastro() {
                         <label htmlFor="confirmacaoSenha">Confirmação de Senha</label>
                         <input type="password" value={confirmacaoSenha} onChange={(e) => setConfirmacaoSenha(e.target.value)} id="confirmacaoSenha" name="confirmacaoSenha" placeholder="Confirme sua senha" required />
                     </div>
-                    <button type="submit">Cadastrar</button>
+                    <button className={style.cadastrar} type="submit">Cadastrar</button>
                 </form>
                 {showAlert && <CustomAlert message={alertMessage} onClose={closeAlert} />}
             </div>
