@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 .header {
     display: flex;
     width: 100%;
@@ -45,7 +47,6 @@
     cursor: pointer;
     transition: color 0.3s ease, transform 0.2s ease; 
 }
-  
 
 .botao button:hover {
     color: rgb(103, 238, 70); 
@@ -56,4 +57,10 @@
     transform: scale(0.95); 
 }
 
-
+.welcomeMessage {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    color: yellow; 
+    padding: 20px 16px;
+    cursor: default;
+}

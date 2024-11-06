@@ -2,51 +2,44 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 150vh;
-  text-align: center;
-  
+  height: 100vh;
   background-size: cover;
 }
 
-.formContainer {
+.containerCadastro {
   background-color: #333;
   box-shadow: 0 8px 16px rgba(0, 255, 204, 0.6);
   border: 2px solid rgb(103, 238, 70);
   border-radius: 10px;
-  padding: 5rem;
-  border-radius: 5rem;
-  box-shadow: 0 0px px rgba(0, 0, 0, 0.3);
+  padding: 3rem;
   width: 400px;
   color: white;
 }
 
-.formContainer h2 {
+.h1Cadastro {
   text-align: center;
   margin-bottom: 20px;
   color: rgb(103, 238, 70);
   font-size: 24px;
 }
 
-.inputGroup {
-  margin-bottom: 1rem;
-  margin-right: 7%;
-  margin-left: none;
+.pCadastro {
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(103, 238, 70);
+  font-size: 16px;
 }
 
-.inputGroup label {
+.labelCadastro {
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
   font-weight: bold;
 }
 
-.inputGroup input[type="text"],
-.inputGroup input[type="email"],
-.inputGroup input[type="password"],
-.inputGroup input[type="tel"],
-.inputGroup input[type="number"] {
+.inputCadastro {
   width: 100%;
   padding: 12px;
-  margin-top: 5px;
+  margin-bottom: 1rem;
   border: 2px solid rgb(103, 238, 70);
   border-radius: 8px;
   box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -55,15 +48,12 @@
   color: #4caf50;
 }
 
-input:focus {
+.inputCadastro:focus {
   border-color: #81c784;
   outline: none;
 }
 
-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.CadastroButtons {
   width: 100%;
   padding: 15px;
   margin-top: 15px;
@@ -74,9 +64,10 @@ button {
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s;
+}
 
-  display: block;
-  margin: 15px auto;
+.CadastroButtons:hover {
+  background-color: #81c784;
 }
 
 .alertOverlay {
@@ -95,7 +86,7 @@ button {
 .alertBox {
   background-color: rgb(103, 238, 70);
   padding: 20px;
-  border-radius: 30px;
+  border-radius: 10px;
   width: 300px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -104,8 +95,8 @@ button {
 
 .alertBox p {
   margin: 0 0 15px;
-  color: rgb(14, 13, 13);
-  font-size: 2rem;
+  color: #0e0d0d;
+  font-size: 1.5rem;
 }
 
 .alertBox button {
