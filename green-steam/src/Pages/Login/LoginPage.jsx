@@ -9,9 +9,9 @@ export function Login() {
     const [senha, setSenha] = useState(""); 
     const [mensagem, setMensagem] = useState(""); 
 
-    const handleSubmit = (e) => {
-        e.preventDefault(); // Impede o comportamento padrão de envio do formulário
-        setMensagem(""); // Limpa a mensagem antes de validar
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setMensagem("");
 
         // Validações
         if (!email.includes("@")) {
@@ -23,12 +23,29 @@ export function Login() {
             return;
         }
 
-        // Se as validações passarem, redireciona para a página inicial
-        navigate("/home");
-       
+        try {
+            const response = await fetch('http://localhost:8080/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, senha })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                localStorage.setItem('token', data.token); // Armazena o token no localStorage
+                localStorage.setItem('nome', data.nome); // Armazena o nome do cliente no localStorage
+                navigate("/home"); // Redireciona para a página inicial
+            } else {
+                setMensagem("Email ou senha não correspondentes");
+            }
+        } catch (error) {
+            setMensagem("Erro ao fazer login. Tente novamente.");
+        }
     };
 
-    // Função para redirecionar para a página de cadastro
+    // Defina a função handleNavigation2 aqui
     const handleNavigation2 = () => {
         navigate("/criarConta"); 
     };
@@ -37,7 +54,7 @@ export function Login() {
         <div className={styles.divLoginPrincipal}> 
             <div className={styles.containerLogin}>
                 <h1 className={styles.h1Login}>Login</h1> 
-                {mensagem && <p className={styles.pLogin}>{mensagem}</p>} 
+                {mensagem && <p className={styles.pLogin} style={{ color: 'red' }}>{mensagem}</p>} 
                 <form onSubmit={handleSubmit}> 
                     <div>
                         <label className={styles.labelLogin} htmlFor="email">E-mail:</label> 
@@ -64,7 +81,7 @@ export function Login() {
                     <button className={styles.LoginButtons} type="submit">Entrar</button> 
                     <div className={styles.containerButtonLogin}>
                         <p className={styles.pLogin}>Ou Crie sua conta aqui</p>
-                        <button type="button" className={styles.LoginButtons} onClick={handleNavigation2}>Cria Conta</button> 
+                        <button type="button" className={styles.LoginButtons} onClick={handleNavigation2}>Criar Conta</button> 
                     </div>
                 </form>
             </div>

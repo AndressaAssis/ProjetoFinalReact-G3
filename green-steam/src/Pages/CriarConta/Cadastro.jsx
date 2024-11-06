@@ -1,111 +1,221 @@
-import React, { useState } from "react";
+import React, { useState } from "react";  
+import styles from '../CriarConta/Cadastro.module.css';
 import { useNavigate } from "react-router-dom";
-import style from './Cadastro.module.css';
 import { adicionarCliente } from '../../Services/Api';
 
-function CustomAlert({ message, onClose }) {
-    return (
-        <div className={style.alertOverlay}>
-            <div className={style.alertBox}>
-                <p>{message}</p>
-                <button onClick={onClose}>Fechar</button>
-            </div>
-        </div>
-    );
-}
-
 export function Cadastro() {
-    const [showAlert, setShowAlert] = useState(false);
-    const [alertMessage, setAlertMessage] = useState('');
-    const [nome, setNome] = useState('');
-    const [email, setEmail] = useState('');
-    const [cpf, setCpf] = useState('');
-    const [telefone, setTelefone] = useState('');
-    const [cep, setCep] = useState('');
-    const [numero, setNumero] = useState('');
-    const [senha, setSenha] = useState('');
-    const [confirmacaoSenha, setConfirmacaoSenha] = useState('');
     const navigate = useNavigate();
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const [nome, setNome] = useState(""); 
+    const [cpf, setCpf] = useState(""); 
+    const [email, setEmail] = useState(""); 
+    const [senha, setSenha] = useState(""); 
+    const [numero, setNumero] = useState(""); 
+    const [dataNascimento, setDataNascimento] = useState(""); 
+    const [cep, setCep] = useState(""); 
+    const [logradouro, setLogradouro] = useState("");
+    const [bairro, setBairro] = useState("");
+    const [cidade, setCidade] = useState("");
+    const [uf, setUf] = useState("");
+    const [mensagem, setMensagem] = useState(""); 
 
-        if (senha !== confirmacaoSenha) {
-            setAlertMessage("As senhas não coincidem. Por favor, tente novamente.");
-            setShowAlert(true);
-            return;
-        }
+    const handleCepChange = async (e) => {
+        const cepValue = e.target.value;
+        setCep(cepValue);
 
-        const data = { nome, email, cpf, telefone, cep, numero, senha };
-
-        try {
-            await adicionarCliente(data);
-            setAlertMessage("Bem-vindo gamer, seu cadastro foi um sucesso!!!");
-            setShowAlert(true);
-        } catch (error) {
+        if (cepValue.length === 8) {
             try {
-                if (error.response && error.response.data && error.response.data.message) {
-                    setAlertMessage(error.response.data.message); 
+                const response = await fetch(`https://viacep.com.br/ws/${cepValue}/json/`);
+                const data = await response.json();
+                if (!data.erro) {
+                    setLogradouro(data.logradouro);
+                    setBairro(data.bairro);
+                    setCidade(data.localidade);
+                    setUf(data.uf);
                 } else {
-                    setAlertMessage("Erro ao realizar o cadastro. Tente novamente.");
+                    setMensagem("CEP não encontrado.");
                 }
-                setShowAlert(true);
-            } catch (catchError) {
-                setAlertMessage("Erro inesperado ao processar o alerta.");
-                setShowAlert(true);
+            } catch (error) {
+                setMensagem("Erro ao buscar o CEP. Tente novamente.");
             }
         }
     };
 
-    
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setMensagem("");
 
-    const closeAlert = () => {
-        setShowAlert(false);
-        if (alertMessage == "Bem-vindo gamer, seu cadastro foi um sucesso!!!") {
-            navigate("/home");
+        // Validações
+        if (!email.includes("@")) {
+            setMensagem("Por favor, insira um e-mail válido contendo '@'.");
+            return;  
+        }
+        if (cpf.trim().length !== 11) {
+            setMensagem("O CPF deve ter 11 dígitos.");
+            return;
+        }
+        if (senha.trim().length < 6) {
+            setMensagem("A senha deve ter pelo menos 6 caracteres.");
+            return;
+        }
+
+        try {
+            const response = await adicionarCliente({ 
+                nome, 
+                cpf, 
+                email, 
+                senha, 
+                numero, 
+                dataNascimento, 
+                cep,
+                logradouro, 
+                bairro, 
+                cidade, 
+                uf
+            });
+
+            if (response.status === 201) {
+                setMensagem("Cadastro realizado com sucesso!");
+                navigate("/login");
+            } else {
+                setMensagem(response.data.message || "Erro ao realizar cadastro. Tente novamente.");
+            }
+        } catch (error) {
+            setMensagem("Erro ao realizar cadastro. Tente novamente.");
         }
     };
 
     return (
-        <div className={style.Cadastro}>
-            <div className={style.formContainer}>
-                <h2>Cadastro de Usuário</h2>
-                <form id="cadastroDeCliente" onSubmit={handleSubmit}>
-                    <div className={style.inputGroup}>
-                        <label htmlFor="nome">Nome</label>
-                        <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} id="nome" name="nome" placeholder="Digite seu nome aqui" required />
+        <div className={styles.divCadastroPrincipal}> 
+            <div className={styles.containerCadastro}>
+                <h1 className={styles.h1Cadastro}>Cadastro de Cliente</h1> 
+                {mensagem && <p className={styles.pCadastro}>{mensagem}</p>} 
+                <form onSubmit={handleSubmit}> 
+                    <div>
+                        <label className={styles.labelCadastro} htmlFor="nome">Nome:</label> 
+                        <input className={styles.inputCadastro}
+                            type="text" 
+                            id="nome" 
+                            value={nome} 
+                            placeholder="Digite seu nome"
+                            onChange={(e) => setNome(e.target.value)} 
+                            required 
+                            autoComplete="name"
+                        />
                     </div>
-                    <div className={style.inputGroup}>
-                        <label htmlFor="email">Email</label>
-                        <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} id="email" name="email" placeholder="Digite seu email aqui" required />
+                    <div>
+                        <label className={styles.labelCadastro} htmlFor="cpf">CPF:</label> 
+                        <input className={styles.inputCadastro}
+                            type="text" 
+                            id="cpf" 
+                            value={cpf} 
+                            placeholder="Digite seu CPF"
+                            onChange={(e) => setCpf(e.target.value)} 
+                            required 
+                            autoComplete="off"
+                        />
                     </div>
-                    <div className={style.inputGroup}>
-                        <label htmlFor="cpf">CPF</label>
-                        <input type="text" value={cpf} onChange={(e) => setCpf(e.target.value)} id="cpf" name="cpf" placeholder="Digite seu CPF aqui" required />
+                    <div>
+                        <label className={styles.labelCadastro} htmlFor="email">E-mail:</label> 
+                        <input className={styles.inputCadastro}
+                            type="email" 
+                            id="email" 
+                            value={email} 
+                            placeholder="Digite seu email"
+                            onChange={(e) => setEmail(e.target.value)} 
+                            required 
+                            autoComplete="email"
+                        />
                     </div>
-                    <div className={style.inputGroup}>
-                        <label htmlFor="telefone">Telefone</label>
-                        <input type="text" value={telefone} onChange={(e) => setTelefone(e.target.value)} id="telefone" name="telefone" placeholder="Digite seu telefone aqui" required />
+                    <div>
+                        <label className={styles.labelCadastro} htmlFor="senha">Senha:</label> 
+                        <input className={styles.inputCadastro}
+                            type="password" 
+                            id="senha" 
+                            value={senha} 
+                            placeholder="Digite sua senha"
+                            onChange={(e) => setSenha(e.target.value)} 
+                            required 
+                            autoComplete="new-password"
+                        />
                     </div>
-                    <div className={style.inputGroup}>
-                        <label htmlFor="cep">CEP</label>
-                        <input type="text" value={cep} onChange={(e) => setCep(e.target.value)} id="cep" name="cep" placeholder="Digite seu CEP aqui" required />
+                    <div>
+                        <label className={styles.labelCadastro} htmlFor="numero">Número:</label> 
+                        <input className={styles.inputCadastro}
+                            type="text" 
+                            id="numero" 
+                            value={numero} 
+                            placeholder="Digite o número"
+                            onChange={(e) => setNumero(e.target.value)} 
+                            required 
+                            autoComplete="off"
+                        />
                     </div>
-                    <div className={style.inputGroup}>
-                        <label htmlFor="numero">Número</label>
-                        <input type="number" value={numero} onChange={(e) => setNumero(e.target.value)} id="numero" name="numero" placeholder="Digite o número da casa aqui" required />
+                    <div>
+                        <label className={styles.labelCadastro} htmlFor="dataNascimento">Data de Nascimento:</label> 
+                        <input className={styles.inputCadastro}
+                            type="date" 
+                            id="dataNascimento" 
+                            value={dataNascimento} 
+                            onChange={(e) => setDataNascimento(e.target.value)} 
+                            required 
+                            autoComplete="bday"
+                        />
                     </div>
-                    <div className={style.inputGroup}>
-                        <label htmlFor="senha">Senha</label>
-                        <input type="password" value={senha} onChange={(e) => setSenha(e.target.value)} id="senha" name="senha" placeholder="Crie uma senha" required />
+                    <div>
+                        <label className={styles.labelCadastro} htmlFor="cep">CEP:</label> 
+                        <input className={styles.inputCadastro}
+                            type="text" 
+                            id="cep" 
+                            value={cep} 
+                            placeholder="Digite seu CEP"
+                            onChange={handleCepChange} 
+                            required 
+                            autoComplete="postal-code"
+                        />
                     </div>
-                    <div className={style.inputGroup}>
-                        <label htmlFor="confirmacaoSenha">Confirmação de Senha</label>
-                        <input type="password" value={confirmacaoSenha} onChange={(e) => setConfirmacaoSenha(e.target.value)} id="confirmacaoSenha" name="confirmacaoSenha" placeholder="Confirme sua senha" required />
+                    <div>
+                        <label className={styles.labelCadastro} htmlFor="logradouro">Logradouro:</label> 
+                        <input className={styles.inputCadastro}
+                            type="text" 
+                            id="logradouro" 
+                            value={logradouro} 
+                            placeholder="Logradouro"
+                            readOnly 
+                        />
                     </div>
-                    <button className={style.cadastrar} type="submit">Cadastrar</button>
+                    <div>
+                        <label className={styles.labelCadastro} htmlFor="bairro">Bairro:</label> 
+                        <input className={styles.inputCadastro}
+                            type="text" 
+                            id="bairro" 
+                            value={bairro} 
+                            placeholder="Bairro"
+                            readOnly 
+                        />
+                    </div>
+                    <div>
+                        <label className={styles.labelCadastro} htmlFor="cidade">Cidade:</label> 
+                        <input className={styles.inputCadastro}
+                            type="text" 
+                            id="cidade" 
+                            value={cidade} 
+                            placeholder="Cidade"
+                            readOnly 
+                        />
+                    </div>
+                    <div>
+                        <label className={styles.labelCadastro} htmlFor="uf">UF:</label> 
+                        <input className={styles.inputCadastro}
+                            type="text" 
+                            id="uf" 
+                            value={uf} 
+                            placeholder="UF"
+                            readOnly 
+                        />
+                    </div>
+                    <button className={styles.buttonCadastro} type="submit">Cadastrar</button>
                 </form>
-                {showAlert && <CustomAlert message={alertMessage} onClose={closeAlert} />}
             </div>
         </div>
     );
