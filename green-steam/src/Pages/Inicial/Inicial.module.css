@@ -31,15 +31,32 @@
     color: #f1f1f1; 
     text-align: left;
     margin-top: 20px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+    position: relative; 
 }
-  
+
+.jogosItem button {
+    margin-top: auto; 
+    background-color: rgb(103, 238, 70); 
+    color: #f1f1f1; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: transform 0.2s ease; 
+    width: 100%; 
+}
+
 .jogosItem img {
     width: 100%;
     height: auto;
-    max-height: 300px;
+    max-height: 150px;
     border-radius: 8px;
     object-fit: cover;
     margin-bottom: 10px;
+    
 }
   
 .jogosItem h3 {
@@ -51,14 +68,16 @@
     margin: 5px 0;
     font-size: 14px;
     color: #bbb;
+    
+    
 }
 
 .plataformas {
+    margin-top: auto;         
     display: flex;
     gap: 6px; 
-    width: 35px; 
-    height: 35px;
-    margin-top: 10px; 
+    width: 10% ; 
+    height:auto;
     cursor: pointer;
     transition: transform 0.2s;
 }
@@ -75,6 +94,10 @@
     border-radius: 5px; 
     cursor: pointer; 
     transition: transform 0.2s ease; 
+    max-width: 295px;
+    max-height: auto;
+
+    
 }
 
 .jogosItem button:active {

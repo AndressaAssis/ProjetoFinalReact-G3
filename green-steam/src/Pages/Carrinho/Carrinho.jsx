@@ -45,7 +45,7 @@ export function Carrinho() {
                   <h3>{item.nome}</h3>
                   <p>Quantidade: {item.quantidade}</p>
                   <p>Preço: R$ {item.precoUnitario.toFixed(2)}</p>
-                  <p>Subtotal: R$ {(item.precoUnitario * item.quantidade).toFixed(2)}</p>
+                 <br /> <strong><p>Subtotal: R$ {(item.precoUnitario * item.quantidade).toFixed(2)}</p></strong><br />
                 </div>
                 <div className={styles.buttonGroup}>
                   <button onClick={() => decrementarQuantidade(item.id)} disabled={item.quantidade <= 1}>-</button>
