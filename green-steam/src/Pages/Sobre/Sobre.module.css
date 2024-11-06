@@ -5,6 +5,9 @@
     margin-top: 20px;
 
     margin-bottom: 10%;
+
+    
+    
 }
 
 .containerDev h1 {
@@ -35,7 +38,7 @@
     border-radius: 8px;
     width: 250px; 
     background-color: #333;
-    box-shadow: 0 5px 10px rgb(103, 238, 70);  
+    box-shadow: 0 8px 16px rgba(0, 255, 204, 0.6); 
     transition: color 0.3s ease;
 }
 

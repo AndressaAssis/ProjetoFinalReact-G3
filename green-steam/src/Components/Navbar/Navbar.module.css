@@ -6,7 +6,7 @@
     height: 17vh;
     background-color: #000000;
     justify-content: space-between;
-    font-size: 1.5rem;
+    font-size: 0.8rem;
 }
 
 .imagemContainer {
@@ -45,11 +45,12 @@
     font-size: 1rem; 
     padding: 20px 16px; 
     cursor: pointer;
-    transition: color 0.3s ease, transform 0.2s ease; 
+    transition: color 0.3s ease, transform 0.2s ease;
+    
 }
 
 .botao button:hover {
-    color: rgb(103, 238, 70); 
+    color: rgb(0, 0, 0); 
     transform: scale(1.05); 
 }
 
@@ -59,8 +60,10 @@
 
 .welcomeMessage {
     font-family: 'Press Start 2P', cursive;
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #4caf50; 
     padding: 20px 16px;
     cursor: default;
+
+    float: left;
 }
