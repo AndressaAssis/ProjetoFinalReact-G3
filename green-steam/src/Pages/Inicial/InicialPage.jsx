@@ -2,7 +2,7 @@ import { useEffect, useContext, useState } from "react";
 import styles from "./Inicial.module.css";
 import { useNavigate } from "react-router-dom";
 import { CarrinhoContext } from "../../Contexts/carrinhoContext.jsx";
-import api from "../../Services/Api.js";
+import {api} from "../../Services/Api.js";
 
 export function InicialPage() {
   const [jogos, setJogos] = useState([]);
