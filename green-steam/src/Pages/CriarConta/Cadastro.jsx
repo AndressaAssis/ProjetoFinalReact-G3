@@ -43,15 +43,21 @@ export function Cadastro() {
             setAlertMessage("Bem-vindo gamer, seu cadastro foi um sucesso!!!");
             setShowAlert(true);
         } catch (error) {
-            if (error.response && error.response.data && error.response.data.message) {
-                // Mostra a mensagem de erro vinda da API
-                setAlertMessage(error.response.data.message);
-            } else {
-                setAlertMessage("Erro ao realizar o cadastro. Tente novamente.");
+            try {
+                if (error.response && error.response.data && error.response.data.message) {
+                    setAlertMessage(error.response.data.message); // Mensagem de erro da API
+                } else {
+                    setAlertMessage("Erro ao realizar o cadastro. Tente novamente.");
+                }
+                setShowAlert(true);
+            } catch (catchError) {
+                setAlertMessage("Erro inesperado ao processar o alerta.");
+                setShowAlert(true);
             }
-            setShowAlert(true);
         }
     };
+
+    
 
     const closeAlert = () => {
         setShowAlert(false);
