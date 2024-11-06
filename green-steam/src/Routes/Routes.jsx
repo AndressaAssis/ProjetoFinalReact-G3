@@ -9,7 +9,7 @@ import Carrinho from '../Pages/Carrinho/Carrinho.jsx';
 import { NotFoundPage } from '../Pages/notFound/NotFound.jsx';
 import { AdicionarJogos } from '../Pages/AdicionarJogos/AdicionarJogos.jsx'; 
 import FinalizarCompra from '../Pages/FinalizarCompras/FinalizarCompras.jsx';
-import { NossosClientes } from '../Pages/NossosClientes/NossosClientes.jsx'; // Importando o componente NossosClientes
+import { NossosClientes } from '../Pages/NossosClientes/NossosClientes.jsx'; 
 
 export function Rotas() {
     return (

@@ -9,7 +9,7 @@ export function NossosClientes() {
             try {
                 const response = await fetch('http://localhost:8080/clientes');
                 const data = await response.json();
-                console.log("Dados recebidos:", data); // Adicione este log para depuração
+                console.log("Dados recebidos:", data); 
                 setClientes(data);
             } catch (error) {
                 console.error("Erro ao buscar clientes:", error);

@@ -34,9 +34,9 @@ export function Login() {
 
             if (response.ok) {
                 const data = await response.json();
-                localStorage.setItem('token', data.token); // Armazena o token no localStorage
-                localStorage.setItem('nome', data.nome); // Armazena o nome do cliente no localStorage
-                navigate("/home"); // Redireciona para a página inicial
+                localStorage.setItem('token', data.token); 
+                localStorage.setItem('nome', data.nome);
+                navigate("/home"); 
             } else {
                 setMensagem("Email ou senha não correspondentes");
             }
@@ -45,7 +45,7 @@ export function Login() {
         }
     };
 
-    // Defina a função handleNavigation2 aqui
+    
     const handleNavigation2 = () => {
         navigate("/criarConta"); 
     };
