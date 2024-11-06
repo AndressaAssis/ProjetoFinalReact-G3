@@ -45,7 +45,7 @@ export function Cadastro() {
         } catch (error) {
             try {
                 if (error.response && error.response.data && error.response.data.message) {
-                    setAlertMessage(error.response.data.message); // Mensagem de erro da API
+                    setAlertMessage(error.response.data.message); 
                 } else {
                     setAlertMessage("Erro ao realizar o cadastro. Tente novamente.");
                 }
@@ -61,7 +61,7 @@ export function Cadastro() {
 
     const closeAlert = () => {
         setShowAlert(false);
-        if (alertMessage === "Bem-vindo gamer, seu cadastro foi um sucesso!!!") {
+        if (alertMessage == "Bem-vindo gamer, seu cadastro foi um sucesso!!!") {
             navigate("/home");
         }
     };
