@@ -29,7 +29,7 @@ export function SobreOsDevs() {
               alt="Desenvolvedor 2"
               className={styles.foto}
             />
-            <h2>Desenvolvedor 2</h2>
+            <h2>João Gabriel</h2>
             <p>
               <strong>Qualidades e Expertises:</strong> Otimiza componentes para
               garantir uma experiência de compra rápida e fluida.

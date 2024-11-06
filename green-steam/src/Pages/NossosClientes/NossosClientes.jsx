@@ -27,7 +27,6 @@ export function NossosClientes() {
                     <tr>
                         <th>Nome</th>
                         <th>Email</th>
-                        <th>Data de Nascimento</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,7 +34,6 @@ export function NossosClientes() {
                         <tr key={cliente.id}>
                             <td>{cliente.nome}</td>
                             <td>{cliente.email}</td>
-                            <td>{cliente.datanascimento}</td>
                         </tr>
                     ))}
                 </tbody>

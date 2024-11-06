@@ -1,16 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 .suporteContainer {
+  max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid rgb(103, 238, 70);
+    border-radius: 10px;
+    background-color: #333;
+    box-shadow: 0 8px 16px rgba(0, 255, 204, 0.6);
+    color: white;
+    margin-bottom: 10%;
+    margin-top: 3%;
+   
+    
   
-  width: 40%;
-  margin: 20px auto;
-  padding-bottom: 10%;
-  padding-left: 2%;
-  padding-right: 2%;
-  padding-top: 2%;
-  border: 2px solid rgb(103, 238, 70);
-  border-radius: 10px;
-  background-color: rgb(31, 42, 31);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  color: white;
+}
+
+.suporteContainer h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Press Start 2P';
+    
+}
+
+.suporteContainer h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color:  #357c38;
 }
 
 .reclamacaoContainer {
@@ -19,7 +35,6 @@
   border: 1px solid rgb(103, 238, 70);
   border-radius: 10px;
   background-color: rgb(50, 60, 50);
-  
 }
 
 input[type="email"],
