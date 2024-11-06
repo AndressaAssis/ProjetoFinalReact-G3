@@ -45,7 +45,7 @@ export function Cadastro() {
         e.preventDefault();
         setMensagem("");
 
-        // Validações
+       
         if (!email.includes("@")) {
             setMensagem("Por favor, insira um e-mail válido contendo '@'.");
             return;  

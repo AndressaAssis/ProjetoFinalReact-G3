@@ -14,7 +14,7 @@ export function NotFoundPage() {
                 <p>Desculpe, a página que você está procurando não existe.</p>
             </div>
 
-            {/* Centralizando o botão com a imagem */}
+            
             <div className={styles.botao}>
                 <button onClick={handleNavigation}>
                     <img src="https://i.pinimg.com/736x/9b/a5/57/9ba557f03fe0bf85d722e2560c1ab665.jpg" alt="Voltar" className={styles.imgBotao} />
