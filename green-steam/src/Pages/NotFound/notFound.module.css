@@ -1,0 +1,54 @@
+.notFoundContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.textContainer {
+  margin-bottom: 30px;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #28da52;
+}
+
+.errorCode {
+  font-size: 2rem;
+  color: #dd6229;
+  margin: 10px 0;
+}
+
+.message {
+  font-size: 1.2rem;
+  color: #28da52;
+  margin-bottom: 30px;
+}
+
+.image {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.backButton {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.backButton:hover {
+  background-color: #218838;
+}

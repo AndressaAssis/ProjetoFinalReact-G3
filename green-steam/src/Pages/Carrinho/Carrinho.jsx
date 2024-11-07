@@ -1,36 +1,72 @@
-import React, { useState} from "react";
-import { Navbar } from "../../Components/Navbar/Navbar";
-import { Footer } from "../../Components/Footer/Footer";
+import React, { useContext } from "react";
+import { CarrinhoContext } from "../../Contexts/carrinhoContext";
 import styles from "./Carrinho.module.css";
+import { useNavigate } from "react-router-dom"; 
 
-export function Carrinho({ onFinalizarCompra }) {
-    const [jogos] = useState([]);
+export function Carrinho() {
+  const {
+    itensCarrinho,
+    removerItem,
+    limparCarrinho,
+    incrementarQuantidade,
+    decrementarQuantidade,
+    valorTotal
+  } = useContext(CarrinhoContext);
+  const navigate = useNavigate();
 
+  const handleRemoverItem = (id) => {
+    removerItem(id);
+  };
 
-    return(
+  const handleLimparCarrinho = () => {
+    limparCarrinho();
+  };
+
+  const handleFinalizarCompra = () => {
+    navigate("/finalizar-compra");
+  };
+
+  const handleContinuarComprando = () => {
+    navigate("/home");
+  };
+
+  return (
+    <div className={styles.carrinhoContainer}>
+      <h1>Carrinho de Compras</h1>
+      {itensCarrinho.length === 0 ? (
+        <p>Seu carrinho está vazio.</p>
+      ) : (
         <>
-        <Navbar />
-
-        <div className={styles.carrinhoContainer}>
-            <h1 className={styles.titulo}>SEU CARRINHO</h1>
-
-            <div className={styles.listaJogos}>
-              {jogos.map((jogo) => (
-                <div key={jogo.id} className={styles.jogo}>
-                  <img src={jogo.imagem} alt={jogo.nome} className={styles.imagemJogo} />
-                    <div className={styles.detalhesJogo}>
-                       <h2>{jogo.nome}</h2>
-                       <p>Quantidade: {jogo.quantidade}</p>
-                       <p>Preço: R$ {jogo.preco}</p>
-                    </div>
+          <ul>
+            {itensCarrinho.map((item) => (
+              <li className={styles.carrinhoItem} key={item.id}>
+                <img src={item.imagemUrl} alt={item.nome} className={styles.itemImage} />
+                <div className={styles.itemDetails}>
+                  <h3>{item.nome}</h3>
+                  <p>Quantidade: {item.quantidade}</p>
+                  <p>Preço: R$ {item.precoUnitario.toFixed(2)}</p>
+                  <p>Subtotal: R$ {(item.precoUnitario * item.quantidade).toFixed(2)}</p>
                 </div>
-              ))} 
-            </div>
-            
-            <button className={styles.botaoFinalizar} onClick={onFinalizarCompra}>Finalizar Compra</button>
-        </div>
-        
-        <Footer />
+                <div className={styles.buttonGroup}>
+                  <button onClick={() => decrementarQuantidade(item.id)} disabled={item.quantidade <= 1}>-</button>
+                  <button onClick={() => incrementarQuantidade(item.id)}>+</button>
+                  <button onClick={() => handleRemoverItem(item.id)}>Remover</button>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <div className={styles.totalContainer}>
+            <p className={styles.totalText}>Valor Total: R$ {valorTotal.toFixed(2)}</p>
+          </div>
+          <div className={styles.actionButtons}>
+            <button onClick={handleLimparCarrinho}>Limpar Carrinho</button>
+            <button onClick={handleFinalizarCompra}>Finalizar Compra</button>
+            <button onClick={handleContinuarComprando}>Continuar Comprando</button>
+          </div>
         </>
-    );
+      )}
+    </div>
+  );
 }
+
+export default Carrinho;

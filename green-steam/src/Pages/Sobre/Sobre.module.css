@@ -1,6 +1,29 @@
 .containerDev {
     padding: 20px;
     text-align: center;
+    color: rgb(103, 238, 70);
+    margin-top: 20px;
+
+    margin-bottom: 10%;
+
+    
+    
+}
+
+.containerDev h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #4caf50;
+}
+
+.containerDev h2 {
+    color:  #fff;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.containerDev p {
+    color:  #357c38;
 }
 
 .listaDesenvolvedores {
@@ -8,14 +31,14 @@
     flex-wrap: wrap; 
     justify-content: center; 
     gap: 20px; 
-    background-color: #c5c4c4;
 }
 
 .desenvolvedor {
     padding: 20px;
     border-radius: 8px;
     width: 250px; 
-    box-shadow: 0 5px 10px rgba(101, 231, 83, 0.1);  
+    background-color: #333;
+    box-shadow: 0 8px 16px rgba(0, 255, 204, 0.6); 
     transition: color 0.3s ease;
 }
 
@@ -27,4 +50,5 @@
     width: 100%;
     height: auto;
     border-radius: 50%; 
+    margin-bottom: 10px;
 }

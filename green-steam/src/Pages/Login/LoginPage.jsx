@@ -1,41 +1,60 @@
-import React, { useState } from "react"; 
-import { Navbar } from "../../Components/Navbar/Navbar"; 
-import { Footer } from "../../Components/Footer/Footer"; 
-import styles from "../Login/LoginPage.module.css"
+import React, { useState } from "react";  
+import styles from "../Login/LoginPage.module.css";
 import { useNavigate } from "react-router-dom";
-export function Login() {
 
-    // useNavigate é chamado no corpo do componente
-    const navigate=useNavigate();
+export function Login() {
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState(""); 
     const [senha, setSenha] = useState(""); 
     const [mensagem, setMensagem] = useState(""); 
 
-    const handleSubmit = (e) => {
-        e.preventDefault(); 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setMensagem("");
+
+        // Validações
         if (!email.includes("@")) {
             setMensagem("Por favor, insira um e-mail válido contendo '@'.");
-            return;
+            return;  
         }
         if (senha.trim() === "") {
             setMensagem("A senha não pode ser vazia.");
             return;
         }
-        setMensagem("Login realizado com sucesso!"); 
+
+        try {
+            const response = await fetch('http://localhost:8080/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, senha })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                localStorage.setItem('token', data.token); // Armazena o token no localStorage
+                localStorage.setItem('nome', data.nome); // Armazena o nome do cliente no localStorage
+                navigate("/home"); // Redireciona para a página inicial
+            } else {
+                setMensagem("Email ou senha não correspondentes");
+            }
+        } catch (error) {
+            setMensagem("Erro ao fazer login. Tente novamente.");
+        }
     };
 
-    // Função para redirecionar para a página de cadastro
+    // Defina a função handleNavigation2 aqui
     const handleNavigation2 = () => {
         navigate("/criarConta"); 
     };
 
     return (
-        <>
-            <Navbar /> 
+        <div className={styles.divLoginPrincipal}> 
             <div className={styles.containerLogin}>
                 <h1 className={styles.h1Login}>Login</h1> 
-                {mensagem && <p className={styles.pLogin}>{mensagem}</p>} 
+                {mensagem && <p className={styles.pLogin} style={{ color: 'red' }}>{mensagem}</p>} 
                 <form onSubmit={handleSubmit}> 
                     <div>
                         <label className={styles.labelLogin} htmlFor="email">E-mail:</label> 
@@ -43,6 +62,7 @@ export function Login() {
                             type="email" 
                             id="email" 
                             value={email} 
+                            placeholder="Digite seu email"
                             onChange={(e) => setEmail(e.target.value)} 
                             required 
                         />
@@ -53,36 +73,18 @@ export function Login() {
                             type="password" 
                             id="senha" 
                             value={senha} 
+                            placeholder="Digite a sua senha"
                             onChange={(e) => setSenha(e.target.value)} 
                             required 
                         />
                     </div>
-                    <button className={styles.LoginButtons}type="submit">Entrar</button> 
+                    <button className={styles.LoginButtons} type="submit">Entrar</button> 
                     <div className={styles.containerButtonLogin}>
-                    <p className={styles.pLogin}>Ou Crie sua conta aqui</p>
-                    <button className={styles.LoginButtons} onClick={handleNavigation2}>Cria Conta</button> 
+                        <p className={styles.pLogin}>Ou Crie sua conta aqui</p>
+                        <button type="button" className={styles.LoginButtons} onClick={handleNavigation2}>Criar Conta</button> 
                     </div>
                 </form>
             </div>
-            <Footer /> 
-        </>
+        </div>
     );
 }
-
-/*
-import React from "react";
-import { Navbar } from "../../Components/Navbar/Navbar";
-import { Footer } from "../../Components/Footer/Footer";
-
-export function Login() {
-
-    return(
-        <>
-        <Navbar />
-        <div>
-        
-        </div>
-        <Footer />
-        </>
-    )
-}*/
